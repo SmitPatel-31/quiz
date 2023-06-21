@@ -117,9 +117,38 @@ function nextQuestion(){
     
     document.getElementById('playersAnswered').style.display = "block";
     document.getElementById('timerText').style.display = "block";
-    document.getElementById('num').innerHTML = " 20";
+    document.getElementById('num').innerHTML = "20";
     socket.emit('nextQuestion'); //Tell server to start new question
 }
+// function nextQuestion() {
+//     // Hide the "Next Question" button
+//     document.getElementById('nextQButton').style.display = "none";
+
+//     // Hide the squares and reset filters
+//     document.getElementById('square1').style.display = "none";
+//     document.getElementById('square2').style.display = "none";
+//     document.getElementById('square3').style.display = "none";
+//     document.getElementById('square4').style.display = "none";
+
+//     document.getElementById('answer1').style.filter = "none";
+//     document.getElementById('answer2').style.filter = "none";
+//     document.getElementById('answer3').style.filter = "none";
+//     document.getElementById('answer4').style.filter = "none";
+
+//     // Display the players answered and timer
+//     document.getElementById('playersAnswered').style.display = "block";
+//     document.getElementById('timerText').style.display = "block";
+//     document.getElementById('num').innerHTML = " 20";
+
+//     // Tell the server to start a new question
+//     socket.emit('nextQuestion');
+
+//     // Delay the execution of the nextQuestion function
+//     setTimeout(function () {
+//         nextQuestion();
+//     }, 10000); // 10 seconds delay
+// }
+
 
 function updateTimer(){
     time = 20;
@@ -130,6 +159,8 @@ function updateTimer(){
             socket.emit('timeUp');
         }
     }, 1000);
+
+    
 }
 socket.on('GameOver', function(data){
     document.getElementById('nextQButton').style.display = "none";

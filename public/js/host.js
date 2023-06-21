@@ -24,7 +24,7 @@ socket.on('updatePlayerLobby', function(data){
     }
 
     // Start the countdown after a specified duration
-    startCountdown(20); // Change the value to the desired duration in seconds
+    startCountdown(5); // Change the value to the desired duration in seconds
 });
 
 // Start the countdown and display the remaining seconds

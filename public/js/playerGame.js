@@ -20,6 +20,20 @@ socket.on('noGameFound', function(){
     window.location.href = '../../';//Redirect user to 'join game' page 
 });
 
+
+// Connect to the server
+
+
+// Listen for the gameQuestions event
+// socket.on('gameQuestions', function (data) {
+//   var question = data.q1;
+
+//   // Update the question and options on the player1.html page
+//   document.getElementById('question').textContent = question;
+  
+// });
+
+  
 function answerSubmitted(num){
     if(playerAnswered == false){
         playerAnswered = true;
@@ -43,6 +57,11 @@ socket.on('answerResult', function(data){
         correct = true;
     }
 });
+
+// Connect to the server
+
+// Listen for the gameQuestions event
+
 
 socket.on('questionOver', function(data){
     if(correct == true){
