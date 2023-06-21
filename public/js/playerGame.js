@@ -138,6 +138,6 @@ function redirectTopath() {
         console.log('Cache is not saved. Unable to redirect.');
       }    
         
-      }, 3000); // 5000 milliseconds = 5 seconds
+      }, 3000); 
     
   }
