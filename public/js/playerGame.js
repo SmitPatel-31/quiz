@@ -122,8 +122,22 @@ socket.on('GameOver', function(){
     document.getElementById('message').style.display = "block";
     document.getElementById('message').innerHTML = "GAME OVER";
     
-
-    
-    
+    redirectTopath();
 });
 
+function redirectTopath() {
+
+    setTimeout(function() {
+
+    var cachedData = localStorage.getItem('playerCache');
+
+    if (cachedData) {
+        var path = 'http://localhost:3000/' + encodeURIComponent(cachedData);
+        window.location.href = path;
+      } else {
+        console.log('Cache is not saved. Unable to redirect.');
+      }    
+        
+      }, 3000); // 5000 milliseconds = 5 seconds
+    
+  }

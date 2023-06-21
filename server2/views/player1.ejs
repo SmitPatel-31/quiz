@@ -9,14 +9,17 @@
            updateLink();
            
         });
-
+        localStorage.setItem('playerCache', 'player1');
+        
         function updateLink() {
             var button = document.getElementById('startButton');
             button.addEventListener('click', function(event) {
                 event.preventDefault();
-                window.location.href = "/player/?name=Player1&pin=" + y;
+                window.location.href = "/player?name=Player1&pin=" + y;
             });
         }
+
+     
     </script>
 
     <div>
