@@ -1,0 +1,27 @@
+<html>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        var y;
+        socket.on('broadcast', function(data){
+           y = data.description;
+           console.log(y);
+           updateLink();
+           
+        });
+
+        function updateLink() {
+            var button = document.getElementById('startButton');
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.href = "/player/?name=Player3&pin=" + y;
+            });
+        }
+    </script>
+
+    <div>
+        <div class="form-field">
+            <button id="startButton">Start</button>
+        </div>
+    </div>
+</html>
