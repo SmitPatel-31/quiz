@@ -100,10 +100,15 @@ socket.on('questionOver', function(playerData, correct){
     document.getElementById('square4').style.height = answer4 + "px";
     
     document.getElementById('nextQButton').style.display = "block";
+    setTimeout(function() {
+        // Code to be executed after the delay
+        nextQuestion(); // Call the nextQuestion function after 3 seconds
+      }, 3000);
     
 });
 
 function nextQuestion(){
+    
     document.getElementById('nextQButton').style.display = "none";
     document.getElementById('square1').style.display = "none";
     document.getElementById('square2').style.display = "none";
@@ -119,6 +124,9 @@ function nextQuestion(){
     document.getElementById('timerText').style.display = "block";
     document.getElementById('num').innerHTML = "20";
     socket.emit('nextQuestion'); //Tell server to start new question
+    
+   
+
 }
 // function nextQuestion() {
 //     // Hide the "Next Question" button
@@ -159,8 +167,6 @@ function updateTimer(){
             socket.emit('timeUp');
         }
     }, 1000);
-
-    
 }
 socket.on('GameOver', function(data){
     document.getElementById('nextQButton').style.display = "none";
@@ -191,8 +197,14 @@ socket.on('GameOver', function(data){
     document.getElementById('winner3').innerHTML = "3. " + data.num3;
     document.getElementById('winner4').innerHTML = "4. " + data.num4; 
     document.getElementById('winner5').innerHTML = "5. " + data.num5;
-});
 
+    redirectToUrl('http://localhost:3000/host/?id=1');
+});
+function redirectToUrl(url) {
+    setTimeout(function() {
+      window.location.href = url;
+    }, 5000); // 5000 milliseconds = 5 seconds
+  }
 
 
 socket.on('getTime', function(player){

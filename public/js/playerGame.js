@@ -9,7 +9,7 @@ var params = jQuery.deparam(window.location.search); //Gets the id from url
 socket.on('connect', function() {
     //Tell server that it is host connection from game view
     socket.emit('player-join-game', params);
-    
+    // document.getElementById('question').textContent = data.q1; 
     document.getElementById('answer1').style.visibility = "visible";
     document.getElementById('answer2').style.visibility = "visible";
     document.getElementById('answer3').style.visibility = "visible";
@@ -51,6 +51,8 @@ function answerSubmitted(num){
     }
 }
 
+
+
 //Get results on last question
 socket.on('answerResult', function(data){
     if(data == true){
@@ -84,15 +86,16 @@ socket.on('newScore', function(data){
     document.getElementById('scoreText').innerHTML = "Score: " + data;
 });
 
-socket.on('nextQuestionPlayer', function(){
+socket.on('nextQuestionPlayer', function(data){
     correct = false;
     playerAnswered = false;
-    
+    console.log(data);
     document.getElementById('answer1').style.visibility = "visible";
     document.getElementById('answer2').style.visibility = "visible";
     document.getElementById('answer3').style.visibility = "visible";
     document.getElementById('answer4').style.visibility = "visible";
     document.getElementById('message').style.display = "none";
+    document.getElementById('question').textContent = data.q1; 
     document.body.style.backgroundColor = "white";
     
 });
@@ -118,5 +121,9 @@ socket.on('GameOver', function(){
     document.getElementById('answer4').style.visibility = "hidden";
     document.getElementById('message').style.display = "block";
     document.getElementById('message').innerHTML = "GAME OVER";
+    
+
+    
+    
 });
 
