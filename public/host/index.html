@@ -7,20 +7,85 @@
     <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
 </head>
 <body>
-    <button id="cancel" onclick="endGame()">Cancel Game</button>
+    <!-- <button id="cancel" onclick="endGame()">Cancel Game</button> -->
+<div class="main-card">
 
+    <div class="Game-title">Quiz Game!</div>   
+    <div class="smallText">Click the below button to start the game</div>
+   <div style="width: 1768px;
+   height: 890px;
+   flex-shrink: 0;
+   margin: auto;
+   display: flex;
+   justify-content: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1770" height="670" viewBox="0 0 1770 670" fill="none">
+        <path d="M531.707 669L127.681 8L1 -221H1769L1225.99 669H531.707Z" stroke="url(#paint0_linear_67_2749)" stroke-opacity="0.6" stroke-linecap="round"/>
+        <defs>
+        <linearGradient id="paint0_linear_67_2749" x1="860.094" y1="699.5" x2="876.358" y2="-317.133" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#4992FF"/>
+        <stop offset="1" stop-color="#4992FF" stop-opacity="0"/>
+        </linearGradient>
+        </defs>
+        </svg>
 
-    <H1 class="booth"> Booth Name</H1>
-    <h2 id="title">Click on start</h2>
+        
+   
+   <div style="width: 1437.5px;
+   height: 890px;
+   /* display: flex; */
+   display: block;
+   /* flex-shrink: 0; */
+   top: 50px;
+   padding: auto;
+   position: absolute;
+   align-items: center;
+   padding: inherit;
+   /* display: block; */
+   margin: auto;
+   align-self: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1438" height="669" viewBox="0 0 1438 669" fill="none">
+        <path d="M432 669L103.5 8L0.5 -221H1438L996.5 669H432Z" fill="url(#paint0_linear_67_2748)"/>
+        <defs>
+        <linearGradient id="paint0_linear_67_2748" x1="699" y1="699.5" x2="719" y2="-317" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#4992FF" stop-opacity="0.11"/>
+        <stop offset="1" stop-color="#4992FF" stop-opacity="0"/>
+        </linearGradient>
+        </defs>
+        </svg>
+        
+        
+    </div>
+    
+   </div>
+    <H1 class="booth">Quiz </H1>
+    <h2 id="title">Click start button to start the Game</h2>
     <!-- <h1 id="gamePinText"></h1> -->
-    <textarea style="width: 700px; height: 500px;" readonly id='players'></textarea>
+
+    <div class="player-mainbox">
+        <div class="player-box" id="player1">Player 1</div>
+        <div class="player-box" id="player2">Player 2</div>
+        <div class="player-box" id="player3">Player 3</div>
+    </div>
+    
+    
+    <textarea style="width:3px; height: 3px;" readonly id='players'></textarea>
+
+
     <br>
     <div id="startGameContainer"></div> <!-- Placeholder for Start Game button -->
     <br>
+   
+    
+    <div id="countdown-container">
+        <div>Game starts in  </div>
+        <div><canvas id="countdown-canvas" width="200" height="200" style="height: 70px; width: 70px;"> </canvas></div>
+       
+    </div>
+    <div id="countdown"></div> 
+    
     <br>
-    <br>
-    <div id="countdown"></div> <!-- Placeholder for countdown timer -->
-    <br>
+
+</div>
     <script src="../socket.io/socket.io.js"></script>
     <script src="../js/libs/jqueryLibrary.js"></script>
     <script src="../js/libs//deparam.js"></script>

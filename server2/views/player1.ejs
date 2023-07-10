@@ -1,30 +1,62 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Host | KahootClone</title>
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io();
-        var y;
-        socket.on('broadcast', function(data){
-           y = data.description;
-           console.log(y);
-           updateLink();
-           
-        });
-        localStorage.setItem('playerCache', 'player1');
-        
-        function updateLink() {
-            var button = document.getElementById('startButton');
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                window.location.href = "/player?name=Player1&pin=" + y;
-            });
+    <style>
+        .centered-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+        
+        .centered-div p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-field {
+            text-align: center;
+        }
+        
+        #startButton {
+            font-size: 24px;
+            padding: 10px 40px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var socket = io();
+            var y;
+            socket.on('broadcast', function(data){
+                y = data.description;
+                console.log(y);
+                updateLink();
+            });
+            localStorage.setItem('playerCache', 'player1');
 
-     
+            function updateLink() {
+                var button = document.getElementById('startButton');
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    window.location.href = "/player?name=Player1&pin=" + y;
+                });
+            }
+        });
     </script>
-
-    <div>
+</head>
+<body>
+    <div class="centered-div">
+        <p>Click on the button to start the game</p>
         <div class="form-field">
             <button id="startButton">Start</button>
         </div>
     </div>
+</body>
 </html>

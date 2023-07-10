@@ -1,9 +1,17 @@
+@font-face {
+    font-family:intel;
+    src: url(intelone-text-regular.ttf);
+}
+body{
+    font-family: intel !important;
+}
 #answer1{
     background-color: #4CAF50;
     margin: auto;
     padding: 30px 20px;
     height: 50%;
-    font-family: 'Raleway', sans-serif;
+    
+    font-family: intel;
     font-size: 20px;
 }
 #answer2{
@@ -11,7 +19,7 @@
     margin: auto;
     padding: 30px 20px;
     height: 50%;
-    font-family: 'Raleway', sans-serif;
+intel !important;
     font-size: 20px;
 }
 #answer3{
@@ -19,7 +27,8 @@
     margin: auto;
     padding: 30px 20px;
     height: 50%;
-    font-family: 'Raleway', sans-serif;
+   
+    font-family: intel;
     font-size: 20px;
 }
 #answer4{
@@ -27,7 +36,8 @@
     margin: auto;
     padding: 30px 20px;
     height: 50%;
-    font-family: 'Raleway', sans-serif;
+   
+    font-family: intel;
     font-size: 20px;
 }
 .square{
@@ -39,7 +49,7 @@
     font-size: 16px;
     margin: 4px 2px;
     width: 70px;
-    height: 0px;
+    height: 300px;
     font-size: 20px;
 }
 
@@ -60,54 +70,84 @@
     display: none;
 }
 #question{
-    font-family: 'Raleway', sans-serif;
+    font-family: intel !important;
 }
 #timerText{
-    font-family: 'Raleway', sans-serif;
+    font-family: intel !important;
 }
 #num{
-    font-family: 'Tajawal', sans-serif;
+    font-family: intel !important;
     font-size: 35px;
 }
 #playersAnswered{
-    font-family: 'Tajawal', sans-serif;
+    display: none !important;
+    font-family: intel !important;
 }
 #questionNum{
-    font-family: 'Tajawal', sans-serif;
+    font-family: intel !important;
 }
 
-#winner1{
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    font-size: 30px;
-    display: none;
+
+
+.main-card{
+    box-shadow: 0 30px 50px rgba(0, 107, 178, 0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin: 50px;
+     width: calc(100vw - 100px);
+     height: calc(100vh - 100px);
+     background-color: #ffffff;
+
+ }
+ .card{
+    width: calc(100vw - 100px- 40px);
+ }
+
+ body {
+    background-color: white;
+    
+   
+    margin: 0;
 }
-#winner2{
-    font-family: 'Raleway', sans-serif;
+/* #countdown {
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    height: 40px;
+    width: 40px;
     text-align: center;
-    font-size: 22px;
-    display: none;
-}
-#winner3{
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    font-size: 20px;
-    display: none;
-}
-#winner4{
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    display: none;
-}
-#winner5{
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    display: none;
-}
-#winnerTitle{
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-size: 35px;
-    color: #3399ff;
-    display: none;
-}
+  }
+  
+  #countdown-number {
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    line-height: 40px;
+  }
+  
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+  }
+  
+  #countdown-circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 113px;
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke: rgb(0, 0, 0);
+    fill: none;
+    animation: countdown 10s linear infinite forwards;
+  }
+  
+  @keyframes countdown {
+    from {
+      stroke-dashoffset: 113px;
+    }
+    to {
+      stroke-dashoffset: 0px;
+    }
+  }
+ */
+

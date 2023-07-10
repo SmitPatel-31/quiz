@@ -1,4 +1,8 @@
-html, body { height: 90%; padding: 0; margin: 0; }
+@font-face {
+    font-family:intel;
+    src: url(intelone-text-regular.ttf);
+}
+html, body { height: 90%; padding: 0; margin: 0; font-family: intel !important;}
 button{
     width: 50%; height: 50%; float: left;
 }
