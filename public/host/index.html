@@ -11,13 +11,16 @@
 <div class="main-card">
 
     <div class="Game-title">Quiz Game!</div>   
-    <div class="smallText">Click the below button to start the game</div>
-   <div style="width: 1768px;
+    <div class="smallText" id="smallText">Click the below button to start the game</div>
+   <div style="
    height: 890px;
    flex-shrink: 0;
    margin: auto;
    display: flex;
-   justify-content: center;">
+   top: 50px;
+   width: 1820px;
+    position: absolute;
+   justify-content: center;" id="ui-main">
     <svg xmlns="http://www.w3.org/2000/svg" width="1770" height="670" viewBox="0 0 1770 670" fill="none">
         <path d="M531.707 669L127.681 8L1 -221H1769L1225.99 669H531.707Z" stroke="url(#paint0_linear_67_2749)" stroke-opacity="0.6" stroke-linecap="round"/>
         <defs>
@@ -35,7 +38,7 @@
    /* display: flex; */
    display: block;
    /* flex-shrink: 0; */
-   top: 50px;
+   
    padding: auto;
    position: absolute;
    align-items: center;
@@ -57,14 +60,18 @@
     </div>
     
    </div>
-    <H1 class="booth">Quiz </H1>
-    <h2 id="title">Click start button to start the Game</h2>
-    <!-- <h1 id="gamePinText"></h1> -->
+    
+   <div id="start-logo">
+    <img src="Group1.svg" alt="SVG image">
+    
+  </div>
 
-    <div class="player-mainbox">
-        <div class="player-box" id="player1">Player 1</div>
-        <div class="player-box" id="player2">Player 2</div>
-        <div class="player-box" id="player3">Player 3</div>
+
+  
+    <div class="player-mainbox" id="player-mainbox" style="display: none;">
+        <div id="player1" style="display: flex;flex-direction: column;"> <div id="player11" style="display: none; top: 450px;position: fixed;margin-left: 100px;"><div class="player1_name">Player 1</div> <img src="1.svg" alt="SVG image" style="padding-top: 10px;"></div><img src="player1_stage.svg" alt="SVG image"></div>
+        <div id="player2"  style="display: flex;flex-direction: column;"><div id="player22" style="display: none; top: 450px;position: fixed;margin-left: 100px;"> <img src="2.svg" alt="SVG image"></div><img src="player2_stage.svg" style="padding-top: 10px;" alt="SVG image"></div>
+        <div id="player3"  style="display: flex;flex-direction: column;"><div id="player33" style="display: none; top: 450px;position: fixed;margin-left: 100px;"> <img src="3.svg" alt="SVG image"></div><img src="player3_stage.svg" style="padding-top: 10px;" alt="SVG image"></div>
     </div>
     
     

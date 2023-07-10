@@ -51,24 +51,39 @@ socket.on('questionOver', function(playerData, correct){
         document.getElementById('answer3').style.filter = "grayscale(50%)";
         document.getElementById('answer4').style.filter = "grayscale(50%)";
         var current = document.getElementById('answer1').innerHTML;
-        document.getElementById('answer1').innerHTML = "&#10004" + " " + current;
+        document.getElementById('answer1').style.border = '2px solid green';
+
+        document.getElementById('answer1').style.color = "#14B838"
+        document.getElementById('answer1').innerHTML = "&#10004" + ' ' + current;
+
     }else if(correct == 2){
         document.getElementById('answer1').style.filter = "grayscale(50%)";
         document.getElementById('answer3').style.filter = "grayscale(50%)";
         document.getElementById('answer4').style.filter = "grayscale(50%)";
         var current = document.getElementById('answer2').innerHTML;
+        document.getElementById('answer2').style.border = '2px solid green';
+        document.getElementById('answer2').style.color = "#14B838"
+
         document.getElementById('answer2').innerHTML = "&#10004" + " " + current;
+
+
     }else if(correct == 3){
         document.getElementById('answer1').style.filter = "grayscale(50%)";
         document.getElementById('answer2').style.filter = "grayscale(50%)";
         document.getElementById('answer4').style.filter = "grayscale(50%)";
         var current = document.getElementById('answer3').innerHTML;
+        document.getElementById('answer3').style.border = '2px solid green';
+        document.getElementById('answer3').style.color = "#14B838"
+
         document.getElementById('answer3').innerHTML = "&#10004" + " " + current;
     }else if(correct == 4){
         document.getElementById('answer1').style.filter = "grayscale(50%)";
         document.getElementById('answer2').style.filter = "grayscale(50%)";
         document.getElementById('answer3').style.filter = "grayscale(50%)";
         var current = document.getElementById('answer4').innerHTML;
+        document.getElementById('answer4').style.border = '2px solid green';
+        document.getElementById('answer4').style.color = "#14B838"
+
         document.getElementById('answer4').innerHTML = "&#10004" + " " + current;
     }
     
@@ -112,6 +127,17 @@ socket.on('questionOver', function(playerData, correct){
 
 function nextQuestion(){
     count++;
+
+    document.getElementById('answer1').style.border = 'none';
+    document.getElementById('answer2').style.border = 'none';
+    document.getElementById('answer3').style.border = 'none';
+    document.getElementById('answer4').style.border = 'none';
+
+    document.getElementById('answer1').style.color = '#666';
+    document.getElementById('answer2').style.color = '#666';
+    document.getElementById('answer3').style.color = '#666';
+    document.getElementById('answer4').style.color = '#666';
+
     document.getElementById('questionNum').innerHTML = "Question No : "+ count;
     document.getElementById('nextQButton').style.display = "none";
     document.getElementById('square1').style.display = "none";
@@ -251,8 +277,8 @@ function updateCountdown() {
 
     // Create a gradient fill
     var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-    gradient.addColorStop(0, 'green'); // Start color (red)
-    gradient.addColorStop(1, 'green'); // End color (yellow)
+    gradient.addColorStop(0, '#267DFF'); // Start color (red)
+    gradient.addColorStop(1, '#267DFF'); // End color (yellow)
 
     // Apply the gradient fill to the countdown circle
     context.lineWidth = 10;
@@ -260,8 +286,8 @@ function updateCountdown() {
     context.stroke();
 
     // Draw the countdown text
-    context.font = 'bold 50px Arial';
-    context.fillStyle = 'black';
+    context.font = 'bold 56px intel';
+    context.fillStyle = '#267DFF';
     context.textAlign = 'center';
     context.textBaseline = 'middle';
     context.fillText(Math.ceil(remainingSeconds), centerX, centerY);

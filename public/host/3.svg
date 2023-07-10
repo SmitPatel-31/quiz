@@ -1,0 +1,17 @@
+<svg width="172" height="172" viewBox="0 0 172 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="86" cy="86" r="84" fill="white" stroke="url(#paint0_linear_71_273)" stroke-width="4"/>
+<circle cx="85.1149" cy="85.1151" r="74.6" fill="#ABFEB8"/>
+<mask id="mask0_71_273" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="10" y="10" width="150" height="150">
+<circle cx="85.1149" cy="85.1151" r="74.6" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0_71_273)">
+<ellipse cx="85.1147" cy="141.812" rx="56.696" ry="32.824" fill="#00D160"/>
+</g>
+<circle cx="85.1145" cy="73.9258" r="26.856" fill="#00D160"/>
+<defs>
+<linearGradient id="paint0_linear_71_273" x1="86" y1="4" x2="86" y2="168" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00D160"/>
+<stop offset="1" stop-color="#6DFCAF"/>
+</linearGradient>
+</defs>
+</svg>

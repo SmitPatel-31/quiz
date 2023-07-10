@@ -17,18 +17,22 @@ socket.on('showGamePin', function(data){
 
 // Adds players' names to the screen and updates the player count
 socket.on('updatePlayerLobby', function(data){
+    document.getElementById('ui-main').style.display="none";
     document.getElementById('players').value = "";
+    document.getElementById('start-logo').style.display="none";
+    document.getElementById('player-mainbox').style.display="flex";
+    
     console.log(data);
     for(var i = 0; i < data.length; i++){
         // document.getElementById('players').value += data[i].name + "\n";
         if(data[i].name=="Player1"){
-            document.getElementById('player1').classList.add('active');
+            document.getElementById('player11').style.display="block";
         }
-        else if(data[i].name =='Player2'){
-            document.getElementById('player2').classList.add('active');
+        if(data[i].name == "Player2"){
+            document.getElementById('player22').style.display="flex";
         }
-        else if(data[i].name=='Player3'){
-            document.getElementById('player3').classList.add('active');
+        if(data[i].name== "Player3"){
+            document.getElementById('player33').style.display="block";
         }
         
     }
@@ -47,61 +51,26 @@ socket.on('updatePlayerLobby', function(data){
 // Update the countdown display
 // Update the countdown display
 // Update the countdown display
-function updateCountdown() {
-
-    // Draw the countdown circle
-    var canvas = document.getElementById('countdown-canvas');
-    var context = canvas.getContext('2d');
-    var centerX = canvas.width / 2;
-    var centerY = canvas.height / 2;
-    var radius = 90;
-    var startAngle = Math.PI * 1.5; // Start at the top
-    var endAngle = startAngle - (2 * Math.PI * (remainingSeconds / 5)); // Calculate the end angle based on remaining seconds
-    var anticlockwise = false;
-
-    // Clear the canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Draw the countdown circle
-    context.beginPath();
-    context.arc(centerX, centerY, radius, startAngle, endAngle, anticlockwise);
-
-    // Create a gradient fill
-    var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-    gradient.addColorStop(0, 'green'); // Start color (red)
-    gradient.addColorStop(1, 'green'); // End color (yellow)
-
-    // Apply the gradient fill to the countdown circle
-    context.lineWidth = 10;
-    context.strokeStyle = gradient;
-    context.stroke();
-
-    // Draw the countdown text
-    context.font = 'bold 50px Arial';
-    context.fillStyle = 'black';
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
-    context.fillText(Math.ceil(remainingSeconds), centerX, centerY);
-}
-
-
-// Start the countdown and display the remaining seconds
 function startCountdown(duration) {
     remainingSeconds = duration;
-    remainingS=duration;
     updateCountdown(); // Initial display
 
-    var countdownInterval = 10; // Update every 10 milliseconds
-
-    countdownTimer = setInterval(function () {
-        remainingSeconds -= countdownInterval / 1000; // Decrement by countdown interval in seconds
+    countdownTimer = setInterval(function() {
+        remainingSeconds--;
         updateCountdown();
 
         if (remainingSeconds <= 0) {
             clearInterval(countdownTimer);
             startGame();
         }
-    }, countdownInterval);
+    }, 1000); // Update every second
+}
+
+// Update the countdown display
+function updateCountdown() {
+    var countdownElement = document.getElementById('smallText');
+    document.getElementById('smallText').style.width = "450px"
+    countdownElement.innerHTML = 'Game starts in ' + remainingSeconds + ' seconds';
 }
 
 

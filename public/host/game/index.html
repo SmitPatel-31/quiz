@@ -16,12 +16,7 @@
 
     <div class="main-card">
        
-        <div id="countdown-container" style="display: flex; flex-direction: column;
-        align-items: center;">
-            <div>Question Ends in : </div>
-            <div><canvas id="countdown-canvas" width="200" height="200" style="height: 70px; width: 70px;"> </canvas></div>
-           
-        </div>
+        
        
 
       <h3 id="timerText" style="text-align: center; padding-top: 20px; display: none;">
@@ -39,7 +34,7 @@
         style="
           display: flex;
           justify-content: space-between;
-          padding-left: 20px;
+          
         "
       >
         <h4 id="questionNum">Question No : 1 </h4>
@@ -52,17 +47,30 @@
         <div class="square" id="square3"></div>
         <div class="square" id="square4"></div>
       </div>
-      <h2 id="question" style="padding-left: 20px">Question</h2>
+
+      <div style="display: flex;
+      justify-content: space-between;
+      align-items: center;top: 90px;margin-left: 84px;position: absolute;top:150px; width: 1734px;">
+        <div><h2 id="question">Question</h2></div>
+        
+        <div id="countdown-container" style="display: flex; flex-direction: column;
+        align-items: center;">
+            <div style="margin-right: 84px;"><canvas id="countdown-canvas" width="200" height="200" style="height: 158px; width: 158px;"> </canvas></div>
+           
+        </div>
+      </div>
+      
 
       <div
-        style="display: flex; width: calc(100vw-100px); padding: 20px"
+        style="display: flex; width: calc(100vw-100px);    position: absolute;top:350px;width: 1818px;"
         class="card"
       >
-        <div style="width: 50%; height: 310px">
-          <h3 id="answer1">Answer</h3>
-          <h3 id="answer3">Answer</h3>
+        <div style="width: 50%;height: 563px;margin-left: 84px;margin-right: 48px;">
+         <h3 id="answer1" >Answer</h3>
+          
+         <h3 id="answer3">Answer</h3>
         </div>
-        <div style="width: 50%; height: 310px">
+        <div style="width: 50%; height: 563px; margin-right: 84px; ">
           <h3 id="answer2">Answer</h3>
 
           <h3 id="answer4">Answer</h3>

@@ -88,27 +88,19 @@ body {
     height: 100%;
 }
 
-.player-box {
-    display: flex;
-    align-items: center;
-    width: 150px;
-    height: 50px;
-    background-color: rgb(134, 137, 140);
-    color: white;
-    padding: 10px;
-    justify-content: center;
-    
-}
 
-.player-box.active {
+
+/* .player-box.active {
     background-color: rgb(0, 107, 178);
-}
+} */
 .player-mainbox{
     display: flex;
     width: 100%;
     justify-content: space-around;
     text-align: center;
-    margin-top: 15vh;
+    position: relative;
+    top: 360px;
+    
 }
 .triangle{
     fill: linear-gradient(1deg, rgba(73, 146, 255, 0.11) 0%, rgba(73, 146, 255, 0.00) 100%);
@@ -121,7 +113,7 @@ body {
     width: auto;
     height: auto;
     flex-direction: column;
-    top: 200px;
+    top: 160px;
     position: relative;
     justify-content: center;
     flex-shrink: 0;
@@ -132,4 +124,38 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: 51px;
+}
+.smallText{
+    display: flex;
+width: 376px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+color: #A3A3A3;
+text-align: center;
+
+font-family: Satoshi;
+font-size: 36px;
+font-style: normal;
+font-weight: 500;
+line-height: 51px;
+margin: auto;
+top: 230px;
+position: relative;
+}
+#start-logo{
+    margin: auto;
+    align-items: center;
+    width: fit-content;
+    top: 300px;
+    position: relative;
+}
+.player1_name{
+    color: #E956CB;
+
+font-family:intel;
+font-size: 30.603px;
+font-style: normal;
+font-weight: 500;
+line-height: 43.354px;
 }
