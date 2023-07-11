@@ -288,7 +288,7 @@ socket.on('GameOver', function(data){
 function redirectToUrl(url) {
     setTimeout(function() {
       window.location.href = url;
-    }, 5000000); // 5000 milliseconds = 5 seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
   }
 
 
