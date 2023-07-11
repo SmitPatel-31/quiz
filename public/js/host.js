@@ -29,7 +29,7 @@ socket.on('updatePlayerLobby', function(data){
             document.getElementById('player11').style.display="block";
         }
         if(data[i].name == "Player2"){
-            document.getElementById('player22').style.display="flex";
+            document.getElementById('player22').style.display="block";
         }
         if(data[i].name== "Player3"){
             document.getElementById('player33').style.display="block";
@@ -38,7 +38,7 @@ socket.on('updatePlayerLobby', function(data){
     }
     document.getElementById('countdown-container').style.display="flex";
    
-    startCountdown(5); // Change the value to the desired duration in seconds
+    startCountdown(500); // Change the value to the desired duration in seconds
 });
 
 // Start the countdown and display the remaining seconds

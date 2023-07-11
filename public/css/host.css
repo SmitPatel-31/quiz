@@ -159,3 +159,21 @@ font-style: normal;
 font-weight: 500;
 line-height: 43.354px;
 }
+.player2_name{
+    color:#FF7133;
+
+font-family:intel;
+font-size: 30.603px;
+font-style: normal;
+font-weight: 500;
+line-height: 43.354px;
+}
+.player3_name{
+    color:#00B252;
+
+font-family:intel;
+font-size: 30.603px;
+font-style: normal;
+font-weight: 500;
+line-height: 43.354px;
+}
