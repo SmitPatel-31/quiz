@@ -22,7 +22,10 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 var url = "mongodb://localhost:27017/";
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
 app.set('views', path.join(__dirname, 'views'));
+
 
 app.get('/player1',(req,res)=>{
 
@@ -311,7 +314,6 @@ io.on('connection', (socket) => {
             
         }
     });
-    
     socket.on('getScore', function(){
         var player = players.getPlayer(socket.id);
         socket.emit('newScore', player.gameData.score); 

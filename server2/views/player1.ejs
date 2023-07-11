@@ -4,6 +4,11 @@
     <title>Host | KahootClone</title>
     <script src="/socket.io/socket.io.js"></script>
     <style>
+       
+        @font-face {
+        font-family:intel;
+        src: url(font/intelone-text-regular.ttf);
+    }
         .centered-div {
             display: flex;
             flex-direction: column;
@@ -29,6 +34,39 @@
             border: none;
             border-radius: 5px;
         }
+        #start-logo img{
+            
+            position: relative;
+            top: 350px;
+            width: 600px;
+        }
+        #start-logo{
+            display: flex;
+            justify-content: center;
+           
+        }
+        body{
+            background-color: #EBEBEB;;
+        }
+        .player-title{
+                display: flex;
+        width: 833px;
+        top: 421px;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        top: 160px;
+        position: relative;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #48566A;
+        text-align: center;
+        font-family: intel;
+        font-size: 120px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 51px;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -42,7 +80,7 @@
             localStorage.setItem('playerCache', 'player1');
 
             function updateLink() {
-                var button = document.getElementById('startButton');
+                var button = document.getElementById('svg-img');
                 button.addEventListener('click', function(event) {
                     event.preventDefault();
                     window.location.href = "/player?name=Player1&pin=" + y;
@@ -52,11 +90,63 @@
     </script>
 </head>
 <body>
-    <div class="centered-div">
-        <p>Click on the button to start the game</p>
-        <div class="form-field">
-            <button id="startButton">Start</button>
-        </div>
+    <div class="player-title">Player 1</div>   
+    <div style="
+    height: 600px;
+    flex-shrink: 0;
+    margin: auto;
+    display: flex;
+    
+    width:100%;
+     position: absolute;
+    justify-content: center;" id="ui-main">
+     <svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 1770 670" fill="none">
+         <path d="M531.707 669L127.681 8L1 -221H1769L1225.99 669H531.707Z" stroke="url(#paint0_linear_67_2749)" stroke-opacity="0.6" stroke-linecap="round"/>
+         <defs>
+         <linearGradient id="paint0_linear_67_2749" x1="860.094" y1="699.5" x2="876.358" y2="-317.133" gradientUnits="userSpaceOnUse">
+         <stop stop-color="#4992FF"/>
+         <stop offset="1" stop-color="#4992FF" stop-opacity="0"/>
+         </linearGradient>
+         </defs>
+         </svg>
+ 
+         
+    
+    <div style="width:100%;
+    height: 600px;
+   
+    display:flex;
+    /* flex-shrink: 0; */
+    justify-content: center;
+    padding: auto;
+    position: absolute;
+    align-items: center;
+    padding: inherit;
+    /* display: block; */
+    margin: auto;
+    align-self: center;">
+     <svg xmlns="http://www.w3.org/2000/svg" width="700" height="600" viewBox="0 0 1438 669" fill="none">
+         <path d="M432 669L103.5 8L0.5 -221H1438L996.5 669H432Z" fill="url(#paint0_linear_67_2748)"/>
+         <defs>
+         <linearGradient id="paint0_linear_67_2748" x1="699" y1="699.5" x2="719" y2="-317" gradientUnits="userSpaceOnUse">
+         <stop stop-color="#4992FF" stop-opacity="0.11"/>
+         <stop offset="1" stop-color="#4992FF" stop-opacity="0"/>
+         </linearGradient>
+         </defs>
+         </svg>
+         
+         
+     </div>
+     
     </div>
+
+    <div id="start-logo">
+        <img src="img/Group1.svg" alt="SVG image" id="svg-img">
+        
+      </div>
+     
+   
+ 
+    
 </body>
 </html>

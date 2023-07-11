@@ -20,18 +20,24 @@
 </head>
 
 <body>
-    <div id="stats">
+    <div id="stats" style="display: none;">
         <h4 id="nameText">Name: </h4>
         <h4 id="scoreText">Score: </h4>
         <h4 id="rankText"></h4>
     </div>
-    <h1 id="question"></h1>
-    <h2 id="message"></h2>
-    <button onclick="answerSubmitted(1)" id="answer1" class="button"></button>
-    <button onclick="answerSubmitted(2)" id="answer2" class="button"></button>
-    <br>
-    <button onclick="answerSubmitted(3)" id="answer3" class="button"></button>
-    <button onclick="answerSubmitted(4)" id="answer4" class="button"></button>
+    <h2 id="questionNum">Question no : 1</h2>
+    <h1 id="question"> Question No 1</h1>
+    <h2 id="message" style="display: none;"></h2>
+    <div style="height: 524px;margin: 50px;top: 160px; position: relative;">
+        <div style="display: flex; height: 50%; flex-direction: row;">
+            <div style="width: 100%; margin-right: 24px; margin-bottom:24px ;"><button onclick="answerSubmitted(1)" id="answer1" class="button">1</button></div>
+            <div style="width: 100%;  margin-bottom:24px ;"><button onclick="answerSubmitted(2)" id="answer2" class="button">2</button></div>
+        </div>
+        <div style="display: flex;height: 50%;">
+            <div style="width: 100%; margin-right: 24px;"><button onclick="answerSubmitted(3)" id="answer3" class="button">3</button></div>
+            <div style="width: 100%;"><button onclick="answerSubmitted(4)" id="answer4" class="button">4</button></div>
+        </div>
+    </div>
 
 </body>
 </html>

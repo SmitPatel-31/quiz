@@ -26,7 +26,7 @@ socket.on('gameQuestions', function(data){
     var correctAnswer = data.correct;
     document.getElementById('playersAnswered').innerHTML = "Players Answered 0 / " + data.playersInGame;
     updateTimer();
-    startCountdown(20);
+    startCountdown(20000);
 });
 
 socket.on('updatePlayersAnswered', function(data){
@@ -191,7 +191,7 @@ function nextQuestion(){
 
 
 function updateTimer(){
-    time = 20;
+    time = 20000;
     timer = setInterval(function(){
         time -= 1;
         document.getElementById('num').textContent = " " + time;
@@ -215,10 +215,10 @@ socket.on('GameOver', function(data){
     document.getElementById('timerText').innerHTML = "";
     document.getElementById('countdown-container').style.display = "none";
     document.getElementById('question').innerHTML = "GAME OVER";
-    document.getElementById('question').style.textAlign="center";
+    document.getElementById('question').style.fontSize="center";
     document.getElementById('playersAnswered').innerHTML = "";
     document.getElementById('questionNum').style.display="none"
-    
+    console.log(data);
     document.getElementById('winning-card').style.display="flex";
     document.getElementById('winner1').style.display = "block";
     document.getElementById('winner2').style.display = "block";
@@ -226,10 +226,60 @@ socket.on('GameOver', function(data){
     document.getElementById('winner4').style.display = "none";
     document.getElementById('winner5').style.display = "none";
     document.getElementById('winnerTitle').style.display = "block";
+    if(data.num1 == 'Player1'){
+        document.getElementById('winner1').innerHTML = "" + data.num1;
+        document.getElementById('winner1').style.color = "#E956CB";
+        document.getElementById('win_1_1').style.display = "block";
+        
+    }
+    else if(data.num1 == 'Player2'){
+        document.getElementById('winner1').innerHTML = "" + data.num1;
+        document.getElementById('winner1').style.color = "#FF7133";
+        document.getElementById('win_2_1').style.display = "block";
+    }
+    else if(data.num1 == 'Player3'){
+        document.getElementById('winner1').innerHTML = "" + data.num1;
+        document.getElementById('winner1').style.color = "#00B252";
+        document.getElementById('win_3_1').style.display = "block";
+    }
     
-    document.getElementById('winner1').innerHTML = "" + data.num1;
-    document.getElementById('winner2').innerHTML = "" + data.num2;
-    document.getElementById('winner3').innerHTML = "" + data.num3;
+    
+    if(data.num2 == 'Player1'){
+        document.getElementById('winner2').innerHTML = "" + data.num2;
+        document.getElementById('winner2').style.color = "#E956CB";
+        document.getElementById('win_1_2').style.display = "block";
+    }
+    else if(data.num2 == 'Player2'){
+        document.getElementById('winner2').innerHTML = "" + data.num2;
+        document.getElementById('winner2').style.color = "#FF7133";
+
+        document.getElementById('win_2_2').style.display = "block";
+    }
+    else if(data.num2 == 'Player3'){
+        document.getElementById('winner2').innerHTML = "" + data.num2;
+        document.getElementById('winner2').style.color = "#00B252";
+
+        document.getElementById('win_3_2').style.display = "block";
+    }
+
+    if(data.num3 == 'Player1'){
+
+        document.getElementById('winner3').innerHTML = "" + data.num3;
+        document.getElementById('winner3').style.color = "#E956CB";
+        document.getElementById('win_1_3').style.display = "block";
+    }
+    else if(data.num3 == 'Player2'){
+        document.getElementById('winner3').innerHTML = "" + data.num3;
+        document.getElementById('winner3').style.color = "#FF7133";
+
+        document.getElementById('win_2_3').style.display = "block";
+    }
+    else if(data.num3 == 'Player3'){
+        document.getElementById('winner3').innerHTML = "" + data.num3;
+        document.getElementById('winner3').style.color = "#00B252";
+
+        document.getElementById('win_3_3').style.display = "block";
+    }
     document.getElementById('winner4').innerHTML = "" + data.num4; 
     document.getElementById('winner5').innerHTML = "" + data.num5;
     

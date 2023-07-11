@@ -14,7 +14,7 @@
   </head>
   <body>
 
-    <div class="main-card">
+    <div class="main-card" id="main-card">
        
         
        
@@ -80,11 +80,10 @@
         <button onclick="nextQuestion()" id="nextQButton">nextQuestion</button>
       </div>
 
-    <div id="winning-card" style="display: none;flex-direction: column; align-items: center;position: fixed; top: 50%;
-    left: 51%; transform: translate(-50%, -50%);">
-        <h2 id="winnerTitle">Top 3 Players</h2>
+    <div id="winning-card" style="display: none;flex-direction: column; align-items: center;position: fixed; width: 933px;height: 955px;top: 133px;right: 124px;">
+        <h2 id="winnerTitle"></h2>
 
-        <div style="display: flex; width: 600px">
+        <div style="display: flex;width: 933px;justify-content: space-around; align-items: flex-end;">
           <div
             style="
               display: flex;
@@ -94,12 +93,20 @@
               text-align: center;
             "
           >
-            <div><h3 id="winner3"></h3></div>
-            <div style="background-color:rgb(0, 107, 178); height: 50px; color: white;">3</div>
+            <div style="width: 281px;"><h3 id="winner3"></h3></div>
+            <div>
+              <img src="winn_1_3.svg" id="win_1_3" alt="SVG image" style="display: none;">
+              <img src="winn_2_3.svg" id="win_2_3"alt="SVG image" style="display: none;">
+              <img src="winn_3_3.svg"id="win_3_3" alt="SVG image" style="display: none;">
+            </div>
           </div>
           <div style="display: flex; flex-direction: column; width: 200px;text-align: center;">
-            <div><h3 id="winner1"></h3></div>
-            <div style="background-color:rgb(0, 107, 178); height: 100px; color: white;">1</div>
+            <div style="width: 281px;"><h3 id="winner1"></h3></div>
+            <div>
+              <img src="winn_2_1.svg" id="win_1_1" alt="SVG image"  style="display: none;">
+              <img src="winn_2_1.svg" id="win_2_1" alt="SVG image"  style="display: none;">
+              <img src="winn_2_1.svg" id="win_3_1" alt="SVG image"  style="display: none;">
+            </div>
           </div>
 
           <div
@@ -111,8 +118,14 @@
               text-align: center;
             "
           >
-            <div><h3 id="winner2"></h3></div>
-            <div style="background-color:rgb(0, 107, 178); height: 70px; color: white;">2</div>
+            <div style="width: 281px;"><h3 id="winner2"></h3></div>
+            <div>
+              <img src="winn_3_2.svg" id="win_3_2" alt="SVG image" class="trial" style="display: none;">
+              <img src="winn_2_2.svg" id="win_2_2" alt="SVG image" class="trial" style="display: none;">
+              <img src="winn_1_2.svg" id="win_1_2" alt="SVG image" class="trial" style="display: none;">
+
+
+            </div>
           </div>
         </div>
 
