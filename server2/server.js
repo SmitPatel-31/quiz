@@ -10,6 +10,7 @@ const {LiveGames} = require('./utils/liveGames');
 const {Players} = require('./utils/players');
 
 const publicPath = path.join(__dirname, '../public');
+const playerpath = path.join(__dirname, '/public');
 var app = express();
 app.use(cors());
 var server = http.createServer(app);
@@ -24,7 +25,7 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 var url = "mongodb://localhost:27017/";
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(express.static(playerpath));
 
 app.set('views', path.join(__dirname, 'views'));
 

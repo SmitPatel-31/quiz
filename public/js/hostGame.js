@@ -297,7 +297,7 @@ socket.on('GameOver', function(data){
     document.getElementById('winner4').innerHTML = "" + data.num4; 
     document.getElementById('winner5').innerHTML = "" + data.num5;
     
-    redirectToUrl('http://localhost:3000/host/?id=1');
+    redirectToUrl('http://localhost/host/?id=2');
     
 });
 function redirectToUrl(url) {
