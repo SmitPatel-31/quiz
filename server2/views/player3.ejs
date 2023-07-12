@@ -76,13 +76,37 @@
                 console.log(y);
                 updateLink();
             });
+
+
+            var flag = 1;
+            socket.on('stopNewJoinee', function(data){
+                flag = data.description;
+                console.log(flag);
+
+
+                if(flag == 0){
+                    document.getElementById('start-logo').style.display = "none";
+                }
+            });
+            
+
+            socket.on('allowNewJoinee', function(data){
+                flag = data.description;
+                console.log(flag);
+
+
+                if(flag == 1){
+                    document.getElementById('start-logo').style.display = "flex";
+                }
+            });
+
             localStorage.setItem('playerCache', 'player3');
 
             function updateLink() {
                 var button = document.getElementById('svg-img');
                 button.addEventListener('click', function(event) {
                     event.preventDefault();
-                    window.location.href = "/player?name=Player3&pin=" + y;
+                    window.location.href = "/player?name=Player3&pin=12345";
                 });
             }
         });

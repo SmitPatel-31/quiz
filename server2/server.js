@@ -71,11 +71,14 @@ io.on('connection', (socket) => {
                 
                 //A kahoot was found with the id passed in url
                 if(result[0] !== undefined){
-                    var gamePin = Math.floor(Math.random()*90000) + 10000; //new pin for game
+                    var gamePin = 12345; //new pin for game
                     console.log(gamePin); 
-                   
-                    games.addGame(gamePin, socket.id, false, {playersAnswered: 0, questionLive: false, gameid: data.id, question: 1}); //Creates a game with pin and host id
+                    
+                    io.sockets.emit('allowNewJoinee',{ description:1});
 
+                    
+                    games.addGame(gamePin, socket.id, false, {playersAnswered: 0, questionLive: false, gameid: data.id, question: 1}); //Creates a game with pin and host id
+                    console.log(games);
                     var game = games.getGame(socket.id); //Gets the game data
                     // console.log(game);
                     io.sockets.emit('broadcast',{ description: game.pin});
@@ -95,9 +98,10 @@ io.on('connection', (socket) => {
                 db.close();
             });
         });
+
         
     });
-    
+
     //When the host connects from the game view
     socket.on('host-join-game', (data) => {
         var oldHostId = data.id;
@@ -225,7 +229,7 @@ io.on('connection', (socket) => {
     });
     //When a host or player leaves the site
     socket.on('disconnect', () => {
-        var game = games.getGame(socket.id); //Finding game with socket.id
+        //Finding game with socket.id
         //If a game hosted by that id is found, the socket disconnected is a host
         if(game){
             //Checking to see if host was disconnected or was sent to game view
@@ -242,7 +246,7 @@ io.on('connection', (socket) => {
 
                 io.to(game.pin).emit('hostDisconnect'); //Send player back to 'join' screen
                 socket.leave(game.pin); //Socket is leaving room
-            }
+            } 
         }else{
             //No game has been found, so it is a player socket that has disconnected
             var player = players.getPlayer(socket.id); //Getting player with socket.id
@@ -484,7 +488,14 @@ io.on('connection', (socket) => {
                             num2: second.name,
                             num3: third.name,
                             num4: fourth.name,
-                            num5: fifth.name
+                            num5: fifth.name,
+                            score1:first.score,
+                            score2:second.score,
+                            score3:third.score,
+                            score4:fourth.score,
+                            score5:fifth.score,
+                            
+                            
                         });
                     }
                 });
@@ -495,7 +506,7 @@ io.on('connection', (socket) => {
     socket.on('startGame', () => {
         var game = games.getGame(socket.id);//Get the game based on socket.id
         game.gameLive = true;
-       
+        io.sockets.emit('stopNewJoinee',{ description:0});
         socket.emit('gameStarted', game.hostId);//Tell player and host that game has started
     });
     

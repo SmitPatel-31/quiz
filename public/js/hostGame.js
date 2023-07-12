@@ -1,3 +1,4 @@
+
 var socket = io();
 
 var params = jQuery.deparam(window.location.search); //Gets the id from url
@@ -26,7 +27,7 @@ socket.on('gameQuestions', function(data){
     var correctAnswer = data.correct;
     document.getElementById('playersAnswered').innerHTML = "Players Answered 0 / " + data.playersInGame;
     updateTimer();
-    startCountdown(20000);
+    startCountdown(20);
 });
 
 socket.on('updatePlayersAnswered', function(data){
@@ -191,7 +192,7 @@ function nextQuestion(){
 
 
 function updateTimer(){
-    time = 20000;
+    time = 20;
     timer = setInterval(function(){
         time -= 1;
         document.getElementById('num').textContent = " " + time;
@@ -202,6 +203,19 @@ function updateTimer(){
 }
 
 socket.on('GameOver', function(data){
+    console.log(data);
+
+    document.getElementById('scorecard').style.display = "block";
+    if(data.num1 !=null){
+        document.getElementById('pos1_score').innerHTML = data.num1 + "  :  " + data.score1;
+    }
+    
+    if(data.num2 !=null){
+       document.getElementById('pos2_score').innerHTML = data.num2 + "  :  " + data.score2; 
+    }
+    if(data.num3 !=null){
+        document.getElementById('pos3_score').innerHTML = data.num2 + "  :  " + data.score3; 
+     }
     document.getElementById('nextQButton').style.display = "none";
     document.getElementById('square1').style.display = "none";
     document.getElementById('square2').style.display = "none";
@@ -218,7 +232,6 @@ socket.on('GameOver', function(data){
     document.getElementById('question').style.fontSize="center";
     document.getElementById('playersAnswered').innerHTML = "";
     document.getElementById('questionNum').style.display="none"
-    console.log(data);
     document.getElementById('winning-card').style.display="flex";
     document.getElementById('winner1').style.display = "block";
     document.getElementById('winner2').style.display = "block";
@@ -226,6 +239,7 @@ socket.on('GameOver', function(data){
     document.getElementById('winner4').style.display = "none";
     document.getElementById('winner5').style.display = "none";
     document.getElementById('winnerTitle').style.display = "block";
+
     if(data.num1 == 'Player1'){
         document.getElementById('winner1').innerHTML = "" + data.num1;
         document.getElementById('winner1').style.color = "#E956CB";
@@ -284,11 +298,14 @@ socket.on('GameOver', function(data){
     document.getElementById('winner5').innerHTML = "" + data.num5;
     
     redirectToUrl('http://localhost:3000/host/?id=1');
+    
 });
 function redirectToUrl(url) {
+    
     setTimeout(function() {
       window.location.href = url;
     }, 5000); // 5000 milliseconds = 5 seconds
+    
   }
 
 

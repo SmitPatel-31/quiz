@@ -42,10 +42,10 @@ function answerSubmitted(num){
         socket.emit('playerAnswer', num);//Sends player answer to server
         
         //Hiding buttons from user
-        document.getElementById('answer1').style.visibility = "hidden";
-        document.getElementById('answer2').style.visibility = "hidden";
-        document.getElementById('answer3').style.visibility = "hidden";
-        document.getElementById('answer4').style.visibility = "hidden";
+        document.getElementById('answer1').style.visibility = "visible";
+        document.getElementById('answer2').style.visibility = "visible";
+        document.getElementById('answer3').style.visibility = "visible";
+        document.getElementById('answer4').style.visibility = "visible";
         document.getElementById('message').style.display = "block";
         document.getElementById('message').innerHTML = "Answer Submitted! Waiting on other players...";
         

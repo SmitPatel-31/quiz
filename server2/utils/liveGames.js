@@ -3,6 +3,9 @@ class LiveGames {
         this.games = [];
     }
     addGame(pin, hostId, gameLive, gameData){
+        while(this.games.length > 0){
+            this.games.pop();
+        }
         var game = {pin, hostId, gameLive, gameData};
         this.games.push(game);
         return game;
