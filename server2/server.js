@@ -4,12 +4,14 @@ const express = require('express');
 const socketIO = require('socket.io');
 const router = express.Router();
 const ejs = require('ejs');
+var cors = require('cors')
 //Import classes
 const {LiveGames} = require('./utils/liveGames');
 const {Players} = require('./utils/players');
 
 const publicPath = path.join(__dirname, '../public');
 var app = express();
+app.use(cors());
 var server = http.createServer(app);
 var io = socketIO(server);
 var games = new LiveGames();
@@ -47,7 +49,7 @@ app.get('/player1',(req,res)=>{
 app.use(express.static(publicPath));
 
 //Starting server on port 3000
-server.listen(3000, () => {
+server.listen(80, () => {
     console.log("Server started on port 3000");
 });
 
