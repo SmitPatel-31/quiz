@@ -12,7 +12,7 @@ socket.on('connect', function() {
 });
 
 socket.on('showGamePin', function(data){
-    document.getElementById('gamePinText').innerHTML = data.pin;
+    
 });
 
 // Adds players' names to the screen and updates the player count
