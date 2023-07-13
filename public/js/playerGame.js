@@ -47,7 +47,7 @@ function answerSubmitted(num){
         document.getElementById('answer3').style.visibility = "visible";
         document.getElementById('answer4').style.visibility = "visible";
         document.getElementById('message').style.display = "block";
-        document.getElementById('message').innerHTML = "Answer Submitted! Waiting on other players...";
+        document.getElementById('message').innerHTML = "Answer Submitted! Waiting for other players...";
         
     }
 }

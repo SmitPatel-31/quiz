@@ -74,7 +74,7 @@
             socket.on('broadcast', function(data){
                 y = data.description;
                 console.log(y);
-                updateLink();
+                // updateLink();
             });
 
 
@@ -82,8 +82,6 @@
             socket.on('stopNewJoinee', function(data){
                 flag = data.description;
                 console.log(flag);
-
-
                 if(flag == 0){
                     document.getElementById('start-logo').style.display = "none";
                 }
@@ -101,14 +99,11 @@
             });
 
             localStorage.setItem('playerCache', 'player3');
-
-            function updateLink() {
-                var button = document.getElementById('svg-img');
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    window.location.href = "/player?name=Player3&pin=12345";
-                });
-            }
+            var button = document.getElementById('svg-img');
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.href = "/player?name=Player3&pin=12345";
+            });
         });
     </script>
 </head>
