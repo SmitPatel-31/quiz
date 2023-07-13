@@ -121,14 +121,14 @@ socket.on('questionOver', function(playerData, correct){
     setTimeout(function() {
         // Code to be executed after the delay
         nextQuestion(); // Call the nextQuestion function after 3 seconds
-      }, 3000);
+      },3000);
     
 });
  var count = 1;
 
 function nextQuestion(){
     count++;
-
+    document.getElementById('question').style.display = "block";
     document.getElementById('answer1').style.border = 'none';
     document.getElementById('answer2').style.border = 'none';
     document.getElementById('answer3').style.border = 'none';

@@ -34,6 +34,10 @@ button{
     font-family: intel;
     text-align: center;
     font-size: 35px;
+    position: absolute;
+    top: 350px;
+    width: 100%;
+
 }
 button{
     border: none;

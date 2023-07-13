@@ -49,6 +49,7 @@ function answerSubmitted(num){
         document.getElementById('answer4').style.visibility = "hidden";
         // document.getElementById('answer'+num).style.border = "2px solid #5B9DFF";
         document.getElementById('message').style.display = "block";
+        document.getElementById('questionNum').style.display = "none";
         document.getElementById('message').innerHTML = "Answer Submitted! Waiting for other players...";
         
     }
@@ -76,7 +77,9 @@ socket.on('questionOver', function(data){
             myAnswer = element.gameData.answer;
         }
     });
-    
+    document.getElementById('question').style.display = "block";
+    document.getElementById('questionNum').style.display = "block";
+    document.getElementById('message').style.display = "none";
     document.getElementById('answer1').style.visibility = "visible";
     document.getElementById('answer2').style.visibility = "visible";
     document.getElementById('answer3').style.visibility = "visible";
@@ -122,6 +125,7 @@ socket.on('nextQuestionPlayer', function(data){
     document.getElementById('answer3').style.visibility = "visible";
     document.getElementById('answer4').style.visibility = "visible";
     document.getElementById('message').style.display = "none";
+    document.getElementById('question').style.display = "block";
     document.getElementById('question').textContent = data.q1; 
     document.getElementById('answer1').textContent = data.a1; 
     document.getElementById('answer2').textContent = data.a2; 
