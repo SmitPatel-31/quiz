@@ -7,8 +7,8 @@ body{
 }
 #answer1{
     display: flex;
-    padding: 48px 627px 180.5px 48px;
-    font-size: ;
+    padding: 48px 0px 180.5px 48px;
+    font-size:40px ;
 align-items: center;
 flex: 1 0 0;
 align-self: stretch;
@@ -21,7 +21,7 @@ align-self: stretch;
 }
 #answer2{
     display: flex;
-padding: 48px 627px 180.5px 48px;
+padding: 48px 0px 180.5px 48px;
 align-items: center;
 flex: 1 0 0;
 align-self: stretch;
@@ -33,7 +33,7 @@ color: #666;
 }
 #answer3{
         display: flex;
-    padding: 48.5px 627px 180px 48px;
+    padding: 48.5px 0px 180px 48px;
     align-items: center;
     flex: 1 0 0;
     align-self: stretch;
@@ -44,7 +44,7 @@ border: none;
 }
 #answer4{
     display: flex;
-padding: 48.5px 627px 180px 48px;
+padding: 48.5px 0px 180px 48px;
 align-items: center;
 flex: 1 0 0;
 align-self: stretch;
@@ -92,10 +92,15 @@ border: none;
     flex-shrink: 0;
     color: #48566A;
 
-    font-size: 72px;
-    font-style: normal;
+   
     font-weight: 700;
-    line-height: 88px;
+    font-size: 3vh;
+   
+    font-weight: 700;
+    height: 100px;
+    margin-top: 30;
+    top: 190px;
+    position: fixed;
 }
 #timerText{
     font-family: intel !important;
