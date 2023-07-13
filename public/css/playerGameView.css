@@ -42,7 +42,7 @@ button{
     
 font-style: normal;
 font-weight: 500;
-padding: 48px 0px 180px 48px;
+padding: 48px 0px 120px 48px;
     
     font-size: 30px;
     text-align: left;
@@ -55,7 +55,7 @@ padding: 48px 0px 180px 48px;
     flex-shrink: 0;
     color: #48566A;
     font-family: intel;
-    font-size: 2.5vw;
+    font-size: 2.3vw;
     font-style: normal;
     font-weight: 700;
     /* line-height: 88px; */

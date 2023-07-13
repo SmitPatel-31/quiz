@@ -42,10 +42,12 @@ function answerSubmitted(num){
         socket.emit('playerAnswer', num);//Sends player answer to server
         
         //Hiding buttons from user
-        document.getElementById('answer1').style.visibility = "visible";
-        document.getElementById('answer2').style.visibility = "visible";
-        document.getElementById('answer3').style.visibility = "visible";
-        document.getElementById('answer4').style.visibility = "visible";
+        document.getElementById('question').style.display = "none";
+        document.getElementById('answer1').style.visibility = "hidden";
+        document.getElementById('answer2').style.visibility = "hidden";
+        document.getElementById('answer3').style.visibility = "hidden";
+        document.getElementById('answer4').style.visibility = "hidden";
+        // document.getElementById('answer'+num).style.border = "2px solid #5B9DFF";
         document.getElementById('message').style.display = "block";
         document.getElementById('message').innerHTML = "Answer Submitted! Waiting for other players...";
         
@@ -67,32 +69,28 @@ socket.on('answerResult', function(data){
 
 
 socket.on('questionOver', function(data){
-    console.log(data);
-    if(correct == true){
-       
-        document.getElementById('message').style.display = "none";
-        document.getElementById('message').innerHTML = "Correct!";
-    }else{
-        
-        document.getElementById('message').style.display = "none";
-        document.getElementById('message').innerHTML = "Incorrect!";
-    }
-    var name = 'answer'+data[0].gameData.answer+'_txt';
-    console.log(name);
+    var myAnswer = data[0].gameData.answer;
+    data.forEach(element => {
+        if(element.name == params.name)
+        {
+            myAnswer = element.gameData.answer;
+        }
+    });
+    
     document.getElementById('answer1').style.visibility = "visible";
     document.getElementById('answer2').style.visibility = "visible";
     document.getElementById('answer3').style.visibility = "visible";
     document.getElementById('answer4').style.visibility = "visible";
-    var current = document.getElementById('answer'+data[0].gameData.answer).innerHTML;
+    var current = document.getElementById('answer'+myAnswer).innerHTML;
     if(correct == true){
-        document.getElementById('answer'+data[0].gameData.answer).style.color = "green";
-        document.getElementById('answer'+data[0].gameData.answer).style.border = "2px solid green";
-        document.getElementById('answer'+data[0].gameData.answer).innerHTML = "&#10004" + " " +current;
+        document.getElementById('answer'+myAnswer).style.color = "green";
+        document.getElementById('answer'+myAnswer).style.border = "2px solid green";
+        document.getElementById('answer'+myAnswer).innerHTML = "&#10004" + " " +current;
         
     }else{
-        document.getElementById('answer'+data[0].gameData.answer).style.color = "red";
-        document.getElementById('answer'+data[0].gameData.answer).style.border = "2px solid red";
-        document.getElementById('answer'+data[0].gameData.answer).innerHTML = "&#10008" + " " + current;
+        document.getElementById('answer'+myAnswer).style.color = "red";
+        document.getElementById('answer'+myAnswer).style.border = "2px solid red";
+        document.getElementById('answer'+myAnswer).innerHTML = "&#10008" + " " + current;
         
     }
     
