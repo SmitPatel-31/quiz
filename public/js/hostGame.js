@@ -161,34 +161,6 @@ function nextQuestion(){
    
 
 }
-// function nextQuestion() {
-//     // Hide the "Next Question" button
-//     document.getElementById('nextQButton').style.display = "none";
-
-//     // Hide the squares and reset filters
-//     document.getElementById('square1').style.display = "none";
-//     document.getElementById('square2').style.display = "none";
-//     document.getElementById('square3').style.display = "none";
-//     document.getElementById('square4').style.display = "none";
-
-//     document.getElementById('answer1').style.filter = "none";
-//     document.getElementById('answer2').style.filter = "none";
-//     document.getElementById('answer3').style.filter = "none";
-//     document.getElementById('answer4').style.filter = "none";
-
-//     // Display the players answered and timer
-//     document.getElementById('playersAnswered').style.display = "block";
-//     document.getElementById('timerText').style.display = "block";
-//     document.getElementById('num').innerHTML = " 20";
-
-//     // Tell the server to start a new question
-//     socket.emit('nextQuestion');
-
-//     // Delay the execution of the nextQuestion function
-//     setTimeout(function () {
-//         nextQuestion();
-//     }, 10000); // 10 seconds delay
-// }
 
 
 function updateTimer(){
@@ -206,14 +178,14 @@ socket.on('GameOver', function(data){
     console.log(data);
 
     document.getElementById('scorecard').style.display = "block";
-    if(data.num1 !=null){
+    if(data.num1 != ""){
         document.getElementById('pos1_score').innerHTML = data.num1 + "  :  " + data.score1;
     }
     
-    if(data.num2 !=null){
+    if(data.num2 != ""){
        document.getElementById('pos2_score').innerHTML = data.num2 + "  :  " + data.score2; 
     }
-    if(data.num3 !=null){
+    if(data.num3 != ""){
         document.getElementById('pos3_score').innerHTML = data.num2 + "  :  " + data.score3; 
      }
     document.getElementById('nextQButton').style.display = "none";
