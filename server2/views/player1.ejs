@@ -75,7 +75,7 @@
             socket.on('broadcast', function(data){
                 y = data.description;
                 console.log(y);
-                updateLink();
+                // updateLink();
             });
             var flag = 1;
             socket.on('stopNewJoinee', function(data){
@@ -100,13 +100,15 @@
             });
             localStorage.setItem('playerCache', 'player1');
 
-            function updateLink() {
-                var button = document.getElementById('svg-img');
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    window.location.href = "/player?name=Player1&pin=12345";
-                });
-            }
+            var button = document.getElementById('svg-img');
+            button.addEventListener('click', function(event) {
+                console.log("button clicked");
+                event.preventDefault();
+                window.location.href = "/player?name=Player1&pin=12345";
+            });
+            // function updateLink() {
+                
+            // }
         });
     </script>
 </head>
