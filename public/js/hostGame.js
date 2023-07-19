@@ -269,7 +269,7 @@ socket.on('GameOver', function(data){
     document.getElementById('winner4').innerHTML = "" + data.num4; 
     document.getElementById('winner5').innerHTML = "" + data.num5;
     
-    redirectToUrl('http://quiz.local/host/?id=2');
+    redirectToUrl('http://quiz.local/host/?id=5');
     
 });
 function redirectToUrl(url) {
