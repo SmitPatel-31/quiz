@@ -17,6 +17,7 @@ var server = http.createServer(app);
 var io = socketIO(server);
 var games = new LiveGames();
 var players = new Players();
+var timeUpCount = 0;
 
 //Mongodb setup
 
@@ -82,6 +83,7 @@ io.on('connection', (socket) => {
                     
                     games.addGame(gamePin, socket.id, false, {playersAnswered: 0, questionLive: false, gameid: data.id, question: 1}); //Creates a game with pin and host id
                     console.log(games);
+                    timeUpCount = 0;
                     var game = games.getGame(socket.id); //Gets the game data
                     // console.log(game);
                     io.sockets.emit('broadcast',{ description: game.pin});
@@ -281,7 +283,7 @@ io.on('connection', (socket) => {
         if(game.gameData.questionLive == true){//if the question is still live
             player.gameData.answer = num;
             game.gameData.playersAnswered += 1;
-            
+            timeUpCount = 0;
             var gameQuestion = game.gameData.question;
             var gameid = game.gameData.gameid;
             
@@ -369,6 +371,10 @@ io.on('connection', (socket) => {
         }
         
         var game = games.getGame(socket.id);
+        if(game.gameData.playersAnswered == 0)
+        {
+            timeUpCount = timeUpCount + 1;
+        }
         game.gameData.playersAnswered = 0;
         game.gameData.questionLive = true;
         game.gameData.question += 1;
@@ -388,7 +394,7 @@ io.on('connection', (socket) => {
                 dbo.collection("kahootGames").find(query).toArray(function(err, res) {
                     if (err) throw err;
                     
-                    if(res[0].questions.length >= game.gameData.question){
+                    if(res[0].questions.length >= game.gameData.question && timeUpCount < 3){
                         var questionNum = game.gameData.question;
                         questionNum = questionNum - 1;
                         question = res[0].questions[questionNum].question;
