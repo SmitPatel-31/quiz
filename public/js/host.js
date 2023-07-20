@@ -38,7 +38,7 @@ socket.on('updatePlayerLobby', function(data){
     }
     document.getElementById('countdown-container').style.display="flex";
    
-    startCountdown(5); // Change the value to the desired duration in seconds
+    startCountdown(10); // Change the value to the desired duration in seconds
 });
 
 // Start the countdown and display the remaining seconds

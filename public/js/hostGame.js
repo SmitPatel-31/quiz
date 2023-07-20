@@ -5,7 +5,7 @@ var params = jQuery.deparam(window.location.search); //Gets the id from url
 
 var timer;
 
-var time = 20;
+var time = 15;
 
 //When host connects to server
 socket.on('connect', function() {
@@ -27,7 +27,7 @@ socket.on('gameQuestions', function(data){
     var correctAnswer = data.correct;
     document.getElementById('playersAnswered').innerHTML = "Players Answered 0 / " + data.playersInGame;
     updateTimer();
-    startCountdown(20);
+    startCountdown(time);
 });
 
 socket.on('updatePlayersAnswered', function(data){
@@ -157,14 +157,11 @@ function nextQuestion(){
     document.getElementById('num').innerHTML = "20";
     
     socket.emit('nextQuestion'); //Tell server to start new question
-    
-   
-
 }
 
 
 function updateTimer(){
-    time = 20;
+    time = 15;
     timer = setInterval(function(){
         time -= 1;
         document.getElementById('num').textContent = " " + time;
@@ -272,12 +269,11 @@ socket.on('GameOver', function(data){
     redirectToUrl('http://quiz.local/host/?id=5');
     
 });
+
 function redirectToUrl(url) {
-    
     setTimeout(function() {
       window.location.href = url;
-    }, 5000); // 5000 milliseconds = 5 seconds
-    
+    }, 10000); // 5000 milliseconds = 5 seconds 
   }
 
 
@@ -287,13 +283,6 @@ socket.on('getTime', function(player){
         time: time
     });
 });
-
-
-
-
-
-
-
 
 function updateCountdown() {
 
