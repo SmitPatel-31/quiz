@@ -168,7 +168,7 @@ function redirectTopath() {
     var cachedData = localStorage.getItem('playerCache');
 
     if (cachedData) {
-        var path = 'http://quiz.local/' + encodeURIComponent(cachedData);
+        var path = 'http://192.168.0.13/' + encodeURIComponent(cachedData);
         window.location.href = path;
       } else {
         console.log('Cache is not saved. Unable to redirect.');
