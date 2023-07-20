@@ -394,7 +394,7 @@ io.on('connection', (socket) => {
                 dbo.collection("kahootGames").find(query).toArray(function(err, res) {
                     if (err) throw err;
                     
-                    if(res[0].questions.length >= game.gameData.question && timeUpCount < 3){
+                    if(res[0].questions.length >= game.gameData.question && timeUpCount < 2){
                         var questionNum = game.gameData.question;
                         questionNum = questionNum - 1;
                         question = res[0].questions[questionNum].question;
