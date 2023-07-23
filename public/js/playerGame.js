@@ -174,6 +174,6 @@ function redirectTopath() {
         console.log('Cache is not saved. Unable to redirect.');
       }    
         
-      }, 3000); 
+      }, 10000); 
     
   }
