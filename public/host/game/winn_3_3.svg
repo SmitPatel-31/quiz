@@ -1,10 +1,10 @@
-<svg width="281" height="638" viewBox="0 0 281 638" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="281" height="460" viewBox="0 0 281 460" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="161.866" height="161.866" transform="matrix(0.866025 0.5 -0.866025 0.5 140.18 48.4619)" fill="url(#paint0_linear_71_674)"/>
 <g filter="url(#filter0_f_71_674)">
 <rect width="72.6926" height="73.1999" rx="36.3463" transform="matrix(0.866025 0.5 -0.866025 0.5 139.693 91.5283)" fill="#82FF80" fill-opacity="0.7"/>
 </g>
-<path d="M0.437272 696.768L0.157227 129.396L140.18 210.329L139.9 696.768H0.437272Z" fill="url(#paint1_linear_71_674)"/>
-<path d="M279.924 703.489L280.204 129.396L140.181 210.329L140.461 703.489H279.924Z" fill="url(#paint2_linear_71_674)"/>
+<path d="M0.437272 464L0.157227 129.396L140.18 210.329L139.9 464H0.437272Z" fill="url(#paint1_linear_71_674)"/>
+<path d="M279.924 463.5L280.204 129.396L140.181 210.329L140.461 463.5H279.924Z" fill="url(#paint2_linear_71_674)"/>
 <circle cx="140.284" cy="66.8593" r="64.3924" fill="white" stroke="url(#paint3_linear_71_674)" stroke-width="3.06631"/>
 <circle cx="139.605" cy="66.1808" r="57.1866" fill="#ABFEB8"/>
 <mask id="mask0_71_674" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="82" y="8" width="115" height="116">
@@ -28,7 +28,7 @@
 <stop stop-color="#F4FFF0"/>
 <stop offset="1" stop-color="#FDFFFA"/>
 </linearGradient>
-<linearGradient id="paint2_linear_71_674" x1="161.744" y1="702.089" x2="475.288" y2="504.179" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint2_linear_71_674" x1="161.744" y1="702.088" x2="475.288" y2="504.179" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FBFFF5"/>
 <stop offset="1" stop-color="#C7FFCD"/>
 </linearGradient>

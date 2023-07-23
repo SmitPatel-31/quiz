@@ -1,21 +1,21 @@
-<svg width="281" height="631" viewBox="0 0 281 631" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="161.866" height="161.866" transform="matrix(0.866025 0.5 -0.866025 0.5 140.18 47.9731)" fill="url(#paint0_linear_71_672)"/>
+<svg width="281" height="456" viewBox="0 0 281 456" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="161.866" height="161.866" transform="matrix(0.866025 0.5 -0.866025 0.5 140.18 42.4614)" fill="url(#paint0_linear_71_672)"/>
 <g filter="url(#filter0_f_71_672)">
-<rect width="72.6926" height="73.1999" rx="36.3463" transform="matrix(0.866025 0.5 -0.866025 0.5 139.693 91.04)" fill="#DAA2C6"/>
+<rect width="72.6926" height="73.1999" rx="36.3463" transform="matrix(0.866025 0.5 -0.866025 0.5 139.693 85.5283)" fill="#DAA2C6"/>
 </g>
-<path d="M0.437272 696.279L0.157227 128.907L140.18 209.84L139.9 696.279H0.437272Z" fill="url(#paint1_linear_71_672)"/>
-<path d="M279.924 703L280.204 128.907L140.181 209.84L140.461 703H279.924Z" fill="url(#paint2_linear_71_672)"/>
-<circle cx="140.284" cy="66.371" r="64.3924" fill="white" stroke="url(#paint3_linear_71_672)" stroke-width="3.06631"/>
-<circle cx="139.977" cy="66.0641" r="57.1866" fill="#F7C0EC"/>
-<mask id="mask0_71_672" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="82" y="8" width="116" height="116">
-<circle cx="139.977" cy="66.0641" r="57.1866" fill="#C4C4C4"/>
+<path d="M0.559999 453L0 123L140 205.187V453H0.559999Z" fill="url(#paint1_linear_71_672)"/>
+<path d="M279.644 455.5L280.204 123.395L140.181 204.315L140.181 455.5H279.644Z" fill="url(#paint2_linear_71_672)"/>
+<circle cx="140.284" cy="66.8593" r="64.3924" fill="white" stroke="url(#paint3_linear_71_672)" stroke-width="3.06631"/>
+<circle cx="139.977" cy="66.5524" r="57.1866" fill="#F7C0EC"/>
+<mask id="mask0_71_672" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="82" y="9" width="116" height="115">
+<circle cx="139.977" cy="66.5524" r="57.1866" fill="#C4C4C4"/>
 </mask>
 <g mask="url(#mask0_71_672)">
-<ellipse cx="139.977" cy="109.526" rx="43.4618" ry="25.1621" fill="#E956CB"/>
+<ellipse cx="139.978" cy="110.015" rx="43.4618" ry="25.1621" fill="#E956CB"/>
 </g>
-<circle cx="139.977" cy="57.4851" r="20.5872" fill="#E956CB"/>
+<circle cx="139.977" cy="57.9749" r="20.5872" fill="#E956CB"/>
 <defs>
-<filter id="filter0_f_71_672" x="15.2709" y="22.1708" width="248.406" height="210.685" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_71_672" x="15.2709" y="16.6591" width="248.406" height="210.685" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="39.7889" result="effect1_foregroundBlur_71_672"/>
@@ -24,15 +24,15 @@
 <stop stop-color="#FADEEB"/>
 <stop offset="1" stop-color="#F6EFF2"/>
 </linearGradient>
-<linearGradient id="paint1_linear_71_672" x1="70.1686" y1="656.232" x2="-177.757" y2="438.398" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_71_672" x1="70" y1="658.493" x2="-181.233" y2="441.155" gradientUnits="userSpaceOnUse">
 <stop stop-color="#F2F2F2"/>
 <stop offset="1" stop-color="#FBF9FA"/>
 </linearGradient>
-<linearGradient id="paint2_linear_71_672" x1="161.744" y1="701.6" x2="475.288" y2="503.691" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint2_linear_71_672" x1="161.744" y1="695.999" x2="475.26" y2="498.076" gradientUnits="userSpaceOnUse">
 <stop stop-color="#F6EFF2"/>
 <stop offset="1" stop-color="#EDD8E5"/>
 </linearGradient>
-<linearGradient id="paint3_linear_71_672" x1="43.4888" y1="3.51172" x2="237.078" y2="129.23" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint3_linear_71_672" x1="43.4888" y1="4" x2="237.078" y2="129.719" gradientUnits="userSpaceOnUse">
 <stop stop-color="#F875B4"/>
 <stop offset="0.999" stop-color="#AB2BF8"/>
 </linearGradient>
