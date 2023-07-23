@@ -18,7 +18,14 @@ socket.on('connect', function() {
 });
 
 socket.on('noGameFound', function(){
-    window.location.href = '../../';//Redirect user to 'join game' page 
+    var cachedData = localStorage.getItem('playerCache');
+    if (cachedData) {
+        var path = 'http://192.168.0.13/' + encodeURIComponent(cachedData);
+        window.location.href = path;
+      } else {
+        console.log('Cache is not saved. Unable to redirect.');
+      }
+    // window.location.href = '../../';//Redirect user to 'join game' page 
 });
 
 
@@ -136,7 +143,14 @@ socket.on('nextQuestionPlayer', function(data){
 });
 
 socket.on('hostDisconnect', function(){
-    window.location.href = "../../";
+    var cachedData = localStorage.getItem('playerCache');
+    if (cachedData) {
+        var path = 'http://192.168.0.13/' + encodeURIComponent(cachedData);
+        window.location.href = path;
+      } else {
+        console.log('Cache is not saved. Unable to redirect.');
+      }    
+    // window.location.href = "../../";
 });
 
 socket.on('playerGameData', function(data){

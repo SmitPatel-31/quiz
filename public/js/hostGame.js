@@ -15,7 +15,8 @@ socket.on('connect', function() {
 });
 
 socket.on('noGameFound', function(){
-   window.location.href = '../../';//Redirect user to 'join game' page
+    window.location.href = "/host/game/" + "?id=" + id;
+//    window.location.href = '../../';//Redirect user to 'join game' page
 });
 
 socket.on('gameQuestions', function(data){

@@ -80,7 +80,7 @@ function startGame() {
 }
 
 function endGame() {
-    window.location.href = "/";
+    window.location.href = "/host/game/" + "?id=" + id;
 }
 
 // When the server starts the game
@@ -90,5 +90,5 @@ socket.on('gameStarted', function(id) {
 });
 
 socket.on('noGameFound', function() {
-    window.location.href = '../../'; // Redirect the user to the 'join game' page
+    window.location.href = "/host/game/" + "?id=" + id; // Redirect the user to the 'join game' page
 });
