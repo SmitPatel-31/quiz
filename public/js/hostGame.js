@@ -183,7 +183,7 @@ socket.on('GameOver', function(data){
        document.getElementById('pos2_score').innerHTML = data.num2 + "  :  " + data.score2; 
     }
     if(data.num3 != ""){
-        document.getElementById('pos3_score').innerHTML = data.num2 + "  :  " + data.score3; 
+        document.getElementById('pos3_score').innerHTML = data.num3 + "  :  " + data.score3; 
      }
     document.getElementById('nextQButton').style.display = "none";
     document.getElementById('square1').style.display = "none";
