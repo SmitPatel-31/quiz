@@ -329,7 +329,7 @@ io.on('connection', (socket) => {
     });
     
     socket.on('time', function(data){
-        var time = data.time / 20;
+        var time = data.time / 10;
         time = time * 100;
         var playerid = data.player;
         var player = players.getPlayer(playerid);
