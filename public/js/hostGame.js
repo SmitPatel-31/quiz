@@ -294,7 +294,7 @@ function updateCountdown() {
     var centerY = canvas.height / 2;
     var radius = 90;
     var startAngle = Math.PI * 1.5; // Start at the top
-    var endAngle = startAngle - (2 * Math.PI * (remainingSeconds / time)); // Calculate the end angle based on remaining seconds
+    var endAngle = startAngle - (2 * Math.PI * (remainingSeconds / 10)); // Calculate the end angle based on remaining seconds
     var anticlockwise = false;
 
     // Clear the canvas
