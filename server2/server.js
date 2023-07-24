@@ -513,9 +513,9 @@ io.on('connection', (socket) => {
     
     //When the host starts the game
     socket.on('startGame', () => {
+        io.sockets.emit('stopNewJoinee',{ description:0});
         var game = games.getGame(socket.id);//Get the game based on socket.id
         game.gameLive = true;
-        io.sockets.emit('stopNewJoinee',{ description:0});
         socket.emit('gameStarted', game.hostId);//Tell player and host that game has started
     });
     

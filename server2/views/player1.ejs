@@ -99,9 +99,6 @@
             var flag = 1;
             socket.on('stopNewJoinee', function(data){
                 flag = data.description;
-                console.log(flag);
-
-
                 if(flag == 0){
                     document.getElementById('start-logo').style.display = "none";
                 }
