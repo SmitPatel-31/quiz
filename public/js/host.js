@@ -2,6 +2,7 @@ var socket = io();
 var params = jQuery.deparam(window.location.search);
 var countdownTimer; // Countdown timer variable
 var remainingSeconds; // Remaining seconds
+var playerJoinCountdown = 5;
 
 // When host connects to the server
 socket.on('connect', function() {
@@ -38,7 +39,7 @@ socket.on('updatePlayerLobby', function(data){
     }
     document.getElementById('countdown-container').style.display="flex";
    
-    startCountdown(10); // Change the value to the desired duration in seconds
+    startCountdown(playerJoinCountdown); // Change the value to the desired duration in seconds
 });
 
 // Start the countdown and display the remaining seconds
