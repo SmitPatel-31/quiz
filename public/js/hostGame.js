@@ -5,7 +5,7 @@ var params = jQuery.deparam(window.location.search); //Gets the id from url
 
 var timer;
 
-var time = 15;
+var time = 10;
 
 //When host connects to server
 socket.on('connect', function() {
@@ -162,7 +162,7 @@ function nextQuestion(){
 
 
 function updateTimer(){
-    time = 15;
+    time = 10;
     timer = setInterval(function(){
         time -= 1;
         document.getElementById('num').textContent = " " + time;
@@ -294,7 +294,7 @@ function updateCountdown() {
     var centerY = canvas.height / 2;
     var radius = 90;
     var startAngle = Math.PI * 1.5; // Start at the top
-    var endAngle = startAngle - (2 * Math.PI * (remainingSeconds / 20)); // Calculate the end angle based on remaining seconds
+    var endAngle = startAngle - (2 * Math.PI * (remainingSeconds / time)); // Calculate the end angle based on remaining seconds
     var anticlockwise = false;
 
     // Clear the canvas
