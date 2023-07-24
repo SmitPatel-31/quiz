@@ -188,6 +188,6 @@ function redirectTopath() {
             console.log('Cache is not saved. Unable to redirect.');
         }    
         
-    }, 5000); 
+    }, 10000); 
     
   }
