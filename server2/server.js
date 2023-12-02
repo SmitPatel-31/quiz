@@ -303,7 +303,7 @@ io.on('connection', (socket) => {
                     }
 
                     //Checks if all players answered
-                    if(game.gameData.playersAnswered == playerNum.length){
+                    if(game.gameData.playersAnswered == playerNum.length && game.gameData.questionLive){
                         game.gameData.questionLive = false; //Question has been ended bc players all answered under time
                         var playerData = players.getPlayers(game.hostId);
                         io.to(game.pin).emit('questionOver', playerData, correctAnswer);//Tell everyone that question is over

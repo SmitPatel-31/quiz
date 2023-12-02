@@ -11,11 +11,23 @@ socket.on('connect', function() {
 
 //Boot player back to join screen if game pin has no match
 socket.on('noGameFound', function(){
-    window.location.href = '../';
+    var cachedData = localStorage.getItem('playerCache');
+    if (cachedData) {
+        var path = 'http://192.168.0.13/' + encodeURIComponent(cachedData);
+        window.location.href = path;
+      } else {
+        console.log('Cache is not saved. Unable to redirect.');
+      }
 });
 //If the host disconnects, then the player is booted to main screen
 socket.on('hostDisconnect', function(){
-    window.location.href = '../';
+    var cachedData = localStorage.getItem('playerCache');
+    if (cachedData) {
+        var path = 'http://192.168.0.13/' + encodeURIComponent(cachedData);
+        window.location.href = path;
+      } else {
+        console.log('Cache is not saved. Unable to redirect.');
+      }
 });
 
 //When the host clicks start game, the player screen changes
